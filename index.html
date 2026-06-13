@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        /* Specific Styles for Index Page */
+        /* Specific Styles for Index Page - Redesigned */
         .hero {
-            padding: 80px 0;
+            padding: 70px 0;
             position: relative;
         }
 
@@ -19,7 +19,7 @@
             width: 380px;
             height: 380px;
             margin: 0 auto;
-            border-radius: 24px;
+            border-radius: 50%;
             overflow: hidden;
             box-shadow: var(--shadow-premium);
             border: 1px solid var(--border-color);
@@ -31,6 +31,7 @@
             inset: 0;
             background: linear-gradient(to bottom, transparent, rgba(11, 15, 25, 0.4));
             z-index: 1;
+            border-radius: inherit;
         }
 
         .hero-img {
@@ -310,10 +311,7 @@
             transition: var(--transition-smooth);
         }
 
-        .timeline-item:hover .timeline-content {
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
+        .timeline-item:hover .timeline-content { transform: translateY(-6px); box-shadow: var(--shadow-premium); }
 
         .timeline-date {
             font-size: 13px;
@@ -334,27 +332,11 @@
         }
 
         @media (max-width: 768px) {
-            .hero-img-container {
-                width: 280px;
-                height: 280px;
-            }
-            .hero-name {
-                font-size: 40px;
-            }
-            .timeline::before {
-                left: 16px;
-            }
-            .timeline-item {
-                flex-direction: row !important;
-                margin-bottom: 30px;
-            }
-            .timeline-dot {
-                left: 16px;
-            }
-            .timeline-content {
-                width: calc(100% - 48px);
-                margin-left: 48px;
-            }
+            .hero .container.grid-2 { flex-direction: column-reverse; gap:18px; }
+            .hero-img-box { order:2; width:100%; display:flex; justify-content:center; }
+            .hero-img-container { width:320px; height:320px; }
+            .hero-name { font-size:34px; }
+            .timeline { grid-template-columns: 1fr; }
         }
     </style>
     <script>
@@ -395,13 +377,20 @@
         <!-- Hero Section -->
         <section class="hero reveal active">
             <div class="container grid-2">
+                <div class="hero-img-box">
+                    <div class="hero-img-container">
+                        <img src="assets\Screenshot 2026-06-07 112519.png" alt="Cao Tuấn Phan - Sinh viên IT" class="hero-img">
+                    </div>
+                    <p class="hero-desc">
+                        Chào mừng bạn đến với Digital Portfolio của tôi. Nơi đây tổng hợp những sản phẩm và dự án thực hành tiêu biểu được thực hiện trong môn học Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo tại Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội.
+Portfolio không chỉ phản ánh kết quả học tập mà còn thể hiện hành trình khám phá công nghệ, phát triển kỹ năng số và khả năng vận dụng kiến thức vào các bài toán thực tế. Tôi hy vọng những nội dung được chia sẻ sẽ giúp bạn có cái nhìn rõ nét hơn về năng lực, sự tiến bộ và định hướng phát triển của tôi trong lĩnh vực công nghệ.
+                    </p>
+                </div>
                 <div class="hero-content">
                     <span class="hero-title-greeting">Xin chào, tôi là</span>
                     <h1 class="hero-name">Cao Tuấn Phan</h1>
                     <div class="hero-role"><span id="typewriter">Sinh viên VNU</span><span class="typewriter-cursor">|</span></div>
-                    <p class="hero-desc">
-                        Chào mừng bạn đến với Digital Portfolio cá nhân của tôi. Đây là nơi tôi lưu trữ, hệ thống hóa và trình bày các sản phẩm bài tập thực hành trong môn học <strong>Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</strong> (Trường Đại học Công nghệ - ĐHQGHN). Qua dự án này, tôi muốn thể hiện kỹ năng thực hành công nghệ số và sự phát triển tư duy của mình.
-                    </p>
+                    
                     <div class="personal-info-card">
                         <div class="info-field">
                             <span class="info-label">Họ và tên</span>
@@ -426,11 +415,6 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                         <a href="reflection.html" class="btn btn-secondary">Đọc tổng kết</a>
-                    </div>
-                </div>
-                <div class="hero-img-box">
-                    <div class="hero-img-container">
-                        <img src="assets\Screenshot 2026-06-07 112519.png" alt="Cao Tuấn Phan - Sinh viên IT" class="hero-img">
                     </div>
                 </div>
             </div>
